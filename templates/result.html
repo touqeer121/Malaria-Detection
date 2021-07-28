@@ -1,0 +1,47 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>Result</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+    i {
+        color: darkcyan;
+        transition: all .5s;
+    }
+
+    .navItem:hover>i {
+        color: rgb(41, 212, 224);
+    }
+</style>
+
+<body
+    style="font-size: 20px; background-image: url({% static 'images/bg.jpg' %}); background-repeat:no-repeat; background-size:cover">
+
+    <div style="text-align: center;">
+        <a class="navItem" href="/" style="text-align: left; display: flex; text-decoration: none; margin-left: 20%;">
+            <i class="fas fa-home fa-2x"></i>
+        </a>
+        <h1>Result</h1>
+        <div>
+            <h3>Result :
+                {% if result == "Parasitized" %}
+                <span style="color: red;">
+                    Parasitized
+                </span>
+                {% else %}
+                <span style="color: green;">
+                    Uninfected
+                </span>
+                {% endif %}
+
+            </h3>
+        </div>
+</body>
+
+</html>
